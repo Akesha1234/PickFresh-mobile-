@@ -1,0 +1,177 @@
+.so-notif-page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #FAFBF8;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+/* Header Navigation */
+.so-notif-page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.so-notif-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+}
+
+.so-notif-back-btn {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1E293B;
+}
+
+/* Action Bar & Filter Tabs */
+.so-notif-filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.so-filter-chip {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #E2E8F0;
+    background-color: #FFFFFF;
+    color: #64748B;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+.so-filter-chip.active {
+    background-color: #27672D;
+    color: #FFFFFF;
+    border-color: #27672D;
+}
+
+.so-notif-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 0 4px;
+}
+
+.so-unread-summary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.so-text-btn {
+    background: none;
+    border: none;
+    color: #27672D;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Notifications List Stack */
+.so-notif-page-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.so-notif-card-item {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px 16px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.so-notif-card-item.unread {
+    background-color: #F0FDF4;
+    border-color: #86EFAC;
+}
+
+.so-notif-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #FAFBF8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #E2E8F0;
+}
+
+.so-notif-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.so-notif-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.so-notif-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.so-notif-card-time {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.so-notif-card-msg {
+    font-size: 12px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.so-notif-card-action-btn {
+    align-self: flex-start;
+    margin-top: 6px;
+    background-color: #27672D;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

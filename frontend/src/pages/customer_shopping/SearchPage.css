@@ -1,0 +1,267 @@
+/* SearchPage.css - Image 3 Exact High-Fidelity Layout */
+
+.search-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 20px 16px 20px;
+    background-color: #FAF9F5;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    flex: 1;
+    min-height: 100%;
+}
+
+/* Store Selection Badge Bar */
+.search-store-badge-bar {
+    background-color: #ECF6EE;
+    border: 1px solid #C8E6C9;
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store-badge-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.store-badge-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.store-badge-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #2D7B38;
+    letter-spacing: 0.5px;
+}
+
+.store-badge-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1E293B;
+}
+
+.change-store-link-btn {
+    background-color: #FFFFFF;
+    color: #2D7B38;
+    border: 1px solid #A5D6A7;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Title Row with Back Arrow */
+.search-titles-group-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-titles-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.search-main-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    letter-spacing: -0.4px;
+}
+
+.search-main-sub {
+    font-size: 13px;
+    color: #64748B;
+}
+
+.search-page-back-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Search Input Box */
+.search-input-box {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.exact-search-field {
+    width: 100%;
+    padding: 12px 36px 12px 14px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #1E293B;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.search-clear-x-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Image 3 2-Column Product Grid Layout */
+.image3-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.image3-grid-card {
+    background-color: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.image3-grid-card:hover {
+    border-color: #2D7B38;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(45, 123, 56, 0.08);
+}
+
+.image3-card-img-box {
+    width: 100%;
+    height: 110px;
+    border-radius: 14px;
+    background-color: #F8FAFC;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image3-card-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.image3-card-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.image3-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.3;
+}
+
+.image3-card-price {
+    font-size: 13px;
+    font-weight: 800;
+    color: #2D7B38;
+}
+
+/* Image 3 Soft Green Action Button */
+.search-bottom-action-container {
+    margin-top: 12px;
+    padding-top: 4px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.view-all-products-soft-btn {
+    width: 80%;
+    padding: 12px;
+    border-radius: 18px;
+    border: none;
+    background-color: #dcefe1;
+    color: #2D7B38;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.view-all-products-soft-btn:hover {
+    background-color: #DDF1E2;
+}
+
+/* Image 2 Product Card Style (Horizontal List Card) */
+.image2-product-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background-color: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+}
+
+.product-card-thumb-wrapper {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    min-height: 65px;
+    border-radius: 14px;
+    background-color: #F8FAFC;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.product-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E293B;
+}

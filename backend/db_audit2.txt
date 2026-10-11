@@ -1,0 +1,13 @@
+RestockRequests (8):
+  status=Delivered email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart Store
+  status=Delivered email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart Store
+  status=Delivered email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart Store
+  status=Delivered email=NONE name=Fresh Fields store=GroceryMart Store
+  status=Pending email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart Store
+  status=Pending email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart
+  status=Pending email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart
+  status=Pending email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart
+
+SupplierReplenishments (2):
+  status=Pending Approval email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart
+  status=Delivered email=megasupplier@gmail.com name=Lanka Mega Wholesale Distributors store=GroceryMart

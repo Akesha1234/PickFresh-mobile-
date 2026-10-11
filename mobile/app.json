@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "PickFresh",
+    "slug": "pickfresh-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2E7D32"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pickfresh.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2E7D32"
+      },
+      "package": "com.pickfresh.mobile",
+      "usesCleartextTraffic": true,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2332cb48-9d52-41f5-8121-b01a592729de"
+      }
+    }
+  }
+}

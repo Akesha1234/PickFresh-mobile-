@@ -1,0 +1,352 @@
+.op-dashboard-container {
+    padding: 18px 18px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FAFBF8;
+    min-height: 100%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header Title Row matching screenshot */
+.op-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.op-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.op-back-btn {
+    background: none;
+    border: none;
+    color: #1E293B;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3 Stat Cards Row matching screenshot */
+.op-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.op-stat-card-item {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 18px 12px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    text-align: center;
+}
+
+.op-stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #27672D;
+    line-height: 1;
+}
+
+.op-stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* Next pickup Section matching screenshot */
+.op-next-pickup-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.op-section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.op-stat-card-item.pending-card {
+    border-color: #FDE68A;
+    background: #FFFDF5;
+}
+
+.op-stat-num.pending-num {
+    color: #D97706;
+}
+
+.op-stat-card-item.preparing-card {
+    border-color: #BFDBFE;
+    background: #F8FAFC;
+}
+
+.op-stat-num.preparing-num {
+    color: #2563EB;
+}
+
+.op-stat-card-item.ready-card {
+    border-color: #A7F3D0;
+    background: #F0FDF4;
+}
+
+.op-stat-num.ready-num {
+    color: #059669;
+}
+
+/* Enhanced Pickup Card */
+.op-pickup-card-enhanced {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px 20px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.op-pickup-card-enhanced:hover {
+    border-color: #A7F3D0;
+    box-shadow: 0 6px 18px rgba(39, 103, 45, 0.08);
+}
+
+.op-card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.op-card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.op-avatar-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.op-customer-name-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    display: block;
+    margin-top: 1px;
+}
+
+.op-card-price-badge {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1E293B;
+    background-color: #F1F5F9;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+}
+
+.op-card-details-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background-color: #F8FAFC;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #F1F5F9;
+}
+
+.op-detail-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.op-pickup-card-footer-enhanced {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 6px;
+    gap: 12px;
+}
+
+.op-status-badge-dynamic {
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.op-open-order-btn-enhanced {
+    background-color: #27672D;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+    box-shadow: 0 2px 6px rgba(39, 103, 45, 0.2);
+}
+
+.op-open-order-btn-enhanced:hover {
+    background-color: #1f5424;
+    transform: translateY(-1px);
+}
+
+.op-open-order-btn-enhanced:active {
+    transform: scale(0.97);
+}
+
+.spin-animate {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shop Owner Schedule Manage Card */
+.op-schedule-manage-section {
+    margin-top: 4px;
+}
+
+.op-schedule-card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 16px 18px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: all 0.15s ease;
+}
+
+.op-schedule-card:hover {
+    border-color: #A7F3D0;
+    background-color: #F0FDF4;
+}
+
+.op-schedule-card:active {
+    transform: scale(0.98);
+}
+
+.op-schedule-card-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.op-schedule-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background-color: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.op-schedule-card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.op-schedule-card-sub {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748B;
+    margin: 2px 0 0 0;
+}
+
+.op-schedule-card-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.op-schedule-btn-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #27672D;
+}
+
+/* View Past Orders Button */
+.op-view-past-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.op-view-past-btn:hover {
+    background-color: #F8FAFC;
+    border-color: #94A3B8;
+    color: #1E293B;
+}
+
+.op-view-past-btn:active {
+    transform: scale(0.97);
+}

@@ -1,0 +1,225 @@
+/* CustomerStoresPage.css */
+
+.stores-page-container {
+    min-height: 100%;
+    background-color: #FAF9F5;
+    padding: 20px 20px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.bottom-spacer {
+    height: 12px;
+}
+
+.stores-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stores-header-title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stores-header-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1E293B;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.stores-header-sub {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.stores-search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.stores-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: #1E293B;
+    background: transparent;
+}
+
+.stores-filter-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.stores-chip {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #E2E8F0;
+    background-color: #FFFFFF;
+    color: #64748B;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stores-chip.active {
+    background-color: #2D7B38;
+    color: #FFFFFF;
+    border-color: #2D7B38;
+}
+
+.stores-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.store-list-card {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    border: 1.5px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.store-list-card.selected {
+    border-color: #2D7B38;
+    background-color: #F4FBF5;
+    box-shadow: 0 4px 16px rgba(45, 123, 56, 0.12);
+}
+
+.store-list-card.disabled-card {
+    opacity: 0.65;
+    pointer-events: none;
+    /* Secondary logic protection */
+    background-color: #F8FAFC;
+    border-color: #F1F5F9;
+}
+
+.store-list-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.store-list-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background-color: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.store-list-card.selected .store-list-icon {
+    background-color: #DCFCE7;
+}
+
+.store-list-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.store-list-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1E293B;
+}
+
+.store-list-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #64748B;
+}
+
+.store-rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 700;
+    color: #B45309;
+}
+
+.meta-dot {
+    color: #94A3B8;
+}
+
+.store-dist {
+    font-weight: 600;
+}
+
+.store-list-address-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #64748B;
+    background-color: #F8FAFC;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.store-list-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px dashed #E2E8F0;
+}
+
+.store-status-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #059669;
+}
+
+.store-status-group.closed {
+    color: #DC2626;
+}
+
+.select-store-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #2D7B38;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.store-list-card.selected .select-store-action-btn {
+    background-color: #DCFCE7;
+    color: #2D7B38;
+}

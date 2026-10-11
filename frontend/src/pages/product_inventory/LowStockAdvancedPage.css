@@ -1,0 +1,318 @@
+.stock-alerts-page-wrapper {
+    min-height: 100%;
+    background-color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-alerts-container {
+    padding: 20px 18px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #F8FAFC;
+    flex: 1;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header Title Row */
+.stock-alerts-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.stock-alerts-back-arrow-btn {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.stock-alerts-back-arrow-btn:hover {
+    background-color: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.stock-alerts-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+}
+
+.stock-alerts-sub-title {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #64748B;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Modern Amber Banner Card */
+.stock-alerts-banner-card {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid #FDE68A;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.06);
+}
+
+.stock-alerts-banner-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #FEF3C7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stock-alerts-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.stock-alerts-banner-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #B45309;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.stock-alerts-banner-desc {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #92400E;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.35;
+}
+
+/* Loading & Empty States */
+.stock-alerts-loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 16px;
+    gap: 10px;
+    color: #64748B;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stock-alerts-empty-box {
+    text-align: center;
+    padding: 40px 20px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-box-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #334155;
+    margin: 10px 0 4px;
+}
+
+.empty-box-title.green {
+    color: #15803D;
+}
+
+.empty-box-sub {
+    font-size: 12.5px;
+    color: #64748B;
+    margin: 0;
+}
+
+/* Alert Items Stack */
+.stock-alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stock-alert-card-item {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px 16px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    transition: all 0.15s ease;
+}
+
+.stock-alert-card-item.out-of-stock-border {
+    border-left: 4px solid #EF4444;
+}
+
+.stock-alert-card-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.stock-alert-icon-pill {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.stock-alert-prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stock-alert-item-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.stock-alert-item-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stock-alert-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stock-level-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.stock-level-badge.low-badge {
+    background-color: #FEF3C7;
+    color: #B45309;
+}
+
+.stock-level-badge.out-badge {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+/* Send Request Button - Single Line Clean Styling */
+.stock-alert-send-btn {
+    background-color: #FFFBEB;
+    color: #D97706;
+    border: 1.5px solid #FDE68A;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 10px;
+    transition: all 0.15s ease;
+}
+
+.stock-alert-send-btn:hover {
+    background-color: #FEF3C7;
+    border-color: #F59E0B;
+    color: #B45309;
+    transform: translateY(-1px);
+}
+
+.stock-alert-send-btn:active {
+    transform: scale(0.97);
+}
+
+/* Sent Badge — shown after request is submitted */
+.stock-alert-sent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #DCFCE7, #BBF7D0);
+    color: #15803D;
+    border: 1.5px solid #86EFAC;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 800;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 10px;
+    letter-spacing: 0.1px;
+}
+
+/* Bottom Action Button */
+.stock-alerts-actions-group {
+    margin-top: 10px;
+}
+
+.stock-alerts-back-btn {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1.5px solid #166534;
+    color: #166534;
+    padding: 13px;
+    border-radius: 14px;
+    font-size: 14.5px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(22, 101, 52, 0.05);
+    transition: all 0.15s ease;
+}
+
+.stock-alerts-back-btn:hover {
+    background-color: #F0FDF4;
+    border-color: #15803D;
+}
+
+.stock-alerts-back-btn:active {
+    transform: scale(0.98);
+}

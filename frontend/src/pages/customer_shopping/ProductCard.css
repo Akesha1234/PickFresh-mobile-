@@ -1,0 +1,132 @@
+/* Product Card CSS */
+
+.product-card-item {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #F0F4EF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.product-card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.product-card-badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.product-card-badge {
+    font-size: 9px;
+    font-weight: 800;
+    color: #2E7D32;
+    background-color: #E8F5E9;
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.product-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.product-card-img-wrapper {
+    width: 100%;
+    height: 80px;
+    background-color: #F8FAF7;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.product-card-emoji {
+    font-size: 44px;
+}
+
+.product-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.product-card-farm {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: 600;
+}
+
+.product-card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.3;
+}
+
+.product-card-ripeness {
+    font-size: 10px;
+    color: #10B981;
+    font-weight: 600;
+}
+
+.product-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.product-card-price-group {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.product-card-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #2E7D32;
+}
+
+.product-card-unit {
+    font-size: 10px;
+    color: #64748B;
+}
+
+.product-card-add-btn {
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.product-card-add-btn:hover {
+    background-color: #1B5E20;
+}

@@ -1,0 +1,8 @@
+name=Dairy & Eggs | emoji=🥛
+name=Soft Drinks | emoji=🥤
+name=Vegetables | emoji=🥕
+name=Fruits | emoji=🥑
+name=Snacks | emoji=🍿
+name=Health & Beauty | emoji=🌾
+name=Meat & Seafood | emoji=📦
+name=Household & Essentials | emoji=📦

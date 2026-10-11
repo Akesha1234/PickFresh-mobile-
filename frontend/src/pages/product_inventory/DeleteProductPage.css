@@ -1,0 +1,107 @@
+.delete-product-container {
+    padding: 18px 18px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FAFBF8;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Page Header Title matching screenshot */
+.delete-product-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+/* Center Warning Box matching screenshot */
+.delete-product-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px 10px 10px;
+}
+
+.delete-product-red-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #D9383A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 16px rgba(217, 56, 58, 0.22);
+}
+
+.delete-product-item-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+}
+
+.delete-product-warning-msg {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0;
+    max-width: 290px;
+    line-height: 1.45;
+    font-weight: 500;
+}
+
+/* Action Buttons Stack matching screenshot */
+.delete-product-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+}
+
+.delete-product-delete-btn {
+    width: 100%;
+    background-color: #D9383A;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+    box-shadow: 0 3px 10px rgba(217, 56, 58, 0.2);
+}
+
+.delete-product-delete-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.delete-product-cancel-btn {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px solid #D9383A;
+    color: #D9383A;
+    padding: 13px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.delete-product-cancel-btn:active {
+    transform: scale(0.98);
+    background-color: #FEF2F2;
+}

@@ -1,0 +1,291 @@
+.status-page-container {
+    padding: 16px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    justify-content: space-between;
+}
+
+.status-page-scrollable-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Header */
+.status-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-page-sub-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-page-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.status-page-back-btn {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #1E293B;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.status-page-back-btn:hover {
+    background-color: #F1F5F9;
+}
+
+/* Context Card */
+.status-page-order-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px 16px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.status-page-customer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-page-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.status-page-cust-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+}
+
+.status-page-slot-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+/* Stepper Timeline Section */
+.status-page-stepper-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-page-section-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.status-page-stepper-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-page-timeline-line {
+    position: absolute;
+    left: 27px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background-color: #E2E8F0;
+    z-index: 1;
+}
+
+.status-page-step-card {
+    position: relative;
+    z-index: 2;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 12px 14px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.status-page-step-card:hover {
+    border-color: #A7F3D0;
+    background-color: #F8FAFC;
+}
+
+.status-page-step-card.active-step {
+    background-color: #F0FDF4;
+    border: 2px solid #27672D;
+    box-shadow: 0 4px 12px rgba(39, 103, 45, 0.1);
+}
+
+.status-page-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+}
+
+.status-page-circle.circle-completed {
+    background-color: #27672D;
+    color: #FFFFFF;
+}
+
+.status-page-circle.circle-active {
+    background-color: #27672D;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 4px #DCFCE7;
+}
+
+.status-page-circle.circle-pending {
+    background-color: #F1F5F9;
+    color: #94A3B8;
+    border: 1px solid #E2E8F0;
+}
+
+.status-page-step-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.status-page-step-title.text-dark {
+    color: #1E293B;
+}
+
+.status-page-step-title.text-muted {
+    color: #94A3B8;
+}
+
+.status-page-step-desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748B;
+    margin: 2px 0 0 0;
+}
+
+.status-page-selected-pill {
+    font-size: 11px;
+    font-weight: 800;
+    color: #27672D;
+    background-color: #DCFCE7;
+    padding: 4px 10px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Success Banner */
+.status-page-success-banner {
+    background-color: #DCFCE7;
+    border: 1px solid #86EFAC;
+    padding: 12px 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #166534;
+}
+
+/* Action Buttons Stack */
+.status-page-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.status-page-save-btn {
+    width: 100%;
+    background-color: #27672D;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+    box-shadow: 0 4px 14px rgba(39, 103, 45, 0.25);
+}
+
+.status-page-save-btn:hover {
+    background-color: #1f5424;
+    transform: translateY(-1px);
+}
+
+.status-page-save-btn:active {
+    transform: scale(0.98);
+}
+
+.status-page-cancel-btn {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    color: #64748B;
+    padding: 13px;
+    border-radius: 16px;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+}
+
+.status-page-cancel-btn:hover {
+    background-color: #F8FAFC;
+    color: #1E293B;
+}
+
+.status-page-cancel-btn:active {
+    transform: scale(0.98);
+}

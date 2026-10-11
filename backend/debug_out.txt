@@ -1,0 +1,47 @@
+=== USERS ===
+[0] Email: kiarafernando@gmail.com | Role: customer | Name: Kiara Fernando | ShopName:  | SupplierName: 
+     linkedStores: []
+[1] Email: admin@pickfresh.com | Role: admin | Name: undefined | ShopName: undefined | SupplierName: undefined
+     linkedStores: undefined
+[2] Email: grocerymart@gmail.com | Role: shop_owner | Name: Kamal Bandara | ShopName: GroceryMart | SupplierName: 
+     linkedStores: []
+[3] Email: megasupplier@gmail.com | Role: supplier | Name: Lanka Mega Wholesale Distributors | ShopName:  | SupplierName: Lanka Mega Wholesale Distributors
+     linkedStores: ["grocerymart@gmail.com","lankamart@gmail.com"]
+[4] Email: lankamart@gmail.com | Role: shop_owner | Name: LankaMart | ShopName: LankaMart | SupplierName: 
+     linkedStores: []
+[5] Email: centralfoodcity@gmail.com | Role: supplier | Name: Central Food City | ShopName:  | SupplierName: Central Food City
+     linkedStores: ["lankamart@gmail.com"]
+[6] Email: akesha116@gmail.com | Role: customer | Name: Akesha Bandara | ShopName:  | SupplierName: 
+     linkedStores: []
+
+=== SUPPLIERS COLLECTION ===
+
+=== PRODUCTS (suppliers & owners) ===
+[0] Name: Bitter Gourd | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[1] Name: Butter Beans | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[2] Name: Avocado | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[3] Name: Grapes - Red | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[4] Name: Mangosteen | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[5] Name: Ratthi Full Cream Milk Powder - 400g | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[6] Name: Anchor Full Cream Milk Powder - 400g | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[7] Name: HAPPY HEN EGGS LARGE - 10pcs | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[8] Name: Coca Cola Pet Bottle 1.05L | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[9] Name: 7 Up Pet Bottle 1L | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[10] Name: Sprite Pet Bottle 1L | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[11] Name: Maliban Krisco - 170g | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[12] Name: Maliban Chick Bits Savoury Biscuits | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[13] Name: Scan Jumbo Peanuts Chilli - 70g | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[14] Name: Surf Excel Laundry Detergent Powder | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[15] Name: Diva Fresh Sepalika & Lime - 1kg | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[16] Name: Lysol Citrus Surface Cleaner | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[17] Name: Bairaha Half Chicken | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[18] Name: Bairaha Whole Chicken | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[19] Name: Cic Skin Less Whole Chicken | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[20] Name: Linna | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[21] Name: Dove Beauty Cream Soap 100g | Supplier: Lanka Mega Wholesale Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[22] Name: Lux Soap Soft Glow 95g | Supplier: ABC Distributors | StoreName: GroceryMart | OwnerEmail: grocerymart@gmail.com
+[23] Name: Kotmale Butter 200g | Supplier: Central Food City | StoreName: LankaMart | OwnerEmail: lankamart@gmail.com
+[24] Name: Munchee Super Cream Cracker | Supplier: Central Food City | StoreName: LankaMart | OwnerEmail: lankamart@gmail.com
+[25] Name: Anchor Butter Salted 100g | Supplier: Central Food City | StoreName: LankaMart | OwnerEmail: lankamart@gmail.com
+[26] Name: Sprite Pet Bottle 1L | Supplier: Lanka Mega Wholesale Distributors | StoreName: LankaMart | OwnerEmail: lankamart@gmail.com
+[27] Name: 7 Up Pet Bottle 1L | Supplier: Lanka Mega Wholesale Distributors | StoreName: LankaMart | OwnerEmail: lankamart@gmail.com

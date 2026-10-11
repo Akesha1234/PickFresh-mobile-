@@ -1,0 +1,238 @@
+/* ── Apple Auth Mobile Modal Overlay ── */
+.apple-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    animation: appleModalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes appleModalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal Card — Bottom Sheet */
+.apple-modal-card {
+    width: 100%;
+    background-color: #F2F2F7;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    padding: 24px 20px 32px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.3);
+    animation: appleSlideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@keyframes appleSlideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Pull Indicator */
+.apple-modal-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: #C7C7CC;
+}
+
+/* Close Button */
+.apple-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #E5E5EA;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.apple-modal-close:hover {
+    background: #D1D1D6;
+}
+
+/* Header */
+.apple-modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.apple-logo {
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.apple-modal-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1C1C1E;
+    letter-spacing: -0.4px;
+    margin-bottom: 4px;
+}
+
+.apple-modal-subtitle {
+    font-size: 13px;
+    color: #6C6C70;
+    line-height: 1.45;
+}
+
+/* Account List */
+.apple-account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.apple-account-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    border-radius: 16px;
+    border: 1.5px solid #E5E5EA;
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.apple-account-item:hover {
+    background: #F7F7F9;
+    border-color: #D1D1D6;
+}
+
+.apple-account-item.selected {
+    background: #F0F0FF;
+    border-color: #007AFF;
+}
+
+.apple-account-item:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.apple-account-item.add-account {
+    background: #FFFFFF;
+    border-style: dashed;
+}
+
+/* Avatar Circles */
+.apple-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.apple-avatar.add-icon {
+    background: #E5E5EA;
+}
+
+/* Account Info */
+.apple-account-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.apple-account-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1C1E;
+}
+
+.apple-account-email {
+    font-size: 12px;
+    color: #6C6C70;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Check Badge */
+.apple-check-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #007AFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Loading Spinner */
+.apple-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+    animation: appleSpin 0.65s linear infinite;
+}
+
+@keyframes appleSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer Privacy Badge */
+.apple-modal-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #E5E5EA;
+    font-size: 11.5px;
+    color: #8E8E93;
+    line-height: 1.4;
+}

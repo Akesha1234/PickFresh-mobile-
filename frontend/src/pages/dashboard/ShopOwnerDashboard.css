@@ -1,0 +1,674 @@
+.merchant-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #FAFBF8;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.merchant-dashboard-container *::-webkit-scrollbar {
+    width: 3px !important;
+    height: 3px !important;
+}
+
+.merchant-dashboard-container *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12) !important;
+    border-radius: 4px !important;
+}
+
+/* Top Header Bar */
+.merchant-top-header {
+    background-color: #FFFFFF;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.merchant-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.merchant-logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #E2E8F0;
+}
+
+.merchant-brand-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #27672D;
+    letter-spacing: -0.3px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.merchant-brand-subtitle {
+    font-size: 11px;
+    color: #64748B;
+    margin: 2px 0 0 0;
+    font-weight: 500;
+}
+
+.merchant-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #334155;
+}
+
+.merchant-icon-btn {
+    background: none;
+    border: none;
+    color: #334155;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.15s ease;
+}
+
+.merchant-icon-btn:active {
+    background-color: #F1F5F9;
+}
+
+.merchant-icon-btn.has-unread-ringing svg {
+    animation: bellRingingAnimation 2.2s infinite ease-in-out;
+    transform-origin: top center;
+}
+
+@keyframes bellRingingAnimation {
+    0% {
+        transform: rotate(0);
+    }
+
+    4% {
+        transform: rotate(15deg);
+    }
+
+    8% {
+        transform: rotate(-15deg);
+    }
+
+    12% {
+        transform: rotate(10deg);
+    }
+
+    16% {
+        transform: rotate(-10deg);
+    }
+
+    20% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.merchant-notif-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #EF4444;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+}
+
+.so-notif-view-all-btn {
+    width: 100%;
+    background-color: #E8F5E9;
+    border: none;
+    color: #27672D;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+    transition: background-color 0.15s ease;
+}
+
+.so-notif-view-all-btn:active {
+    background-color: #C8E6C9;
+}
+
+/* Modal Overlay & Dropdown Sheet for Shop Owner Notifications */
+.so-notif-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.so-notif-card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.so-notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 10px;
+}
+
+.so-notif-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+}
+
+.so-notif-close {
+    background: #F1F5F9;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.so-notif-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 14px;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.so-notif-item.unread {
+    background-color: #F0FDF4;
+    border-color: #86EFAC;
+}
+
+.so-notif-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #E2E8F0;
+}
+
+.so-notif-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+}
+
+.so-notif-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.so-notif-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.so-notif-time {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: 600;
+}
+
+.so-notif-msg {
+    font-size: 11.5px;
+    color: #475569;
+    margin: 0;
+}
+
+/* Scrollable Main Content */
+.merchant-content-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 18px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    box-sizing: border-box;
+}
+
+.merchant-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+/* 3 Metrics Overview Cards matching screenshot */
+.merchant-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.merchant-metric-card {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 18px 10px;
+    text-align: center;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.merchant-metric-card:active {
+    transform: scale(0.96);
+}
+
+.merchant-metric-card.peach {
+    background-color: #FFF4E5;
+    border-color: #FFE0B2;
+}
+
+.merchant-metric-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #27672D;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.merchant-metric-number.amber {
+    color: #F57C00;
+}
+
+.merchant-metric-number.red {
+    color: #DC2626;
+}
+
+.merchant-metric-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    margin: 0;
+}
+
+/* Enhanced Overview Banner (Vibrant Premium Emerald Gradient) */
+.merchant-overview-banner {
+    background: linear-gradient(135deg, #15803D 0%, #166534 100%);
+    border-radius: 20px;
+    padding: 20px 20px;
+    min-height: 84px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(21, 128, 61, 0.25);
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.merchant-overview-banner:active {
+    transform: scale(0.98);
+}
+
+.merchant-overview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.merchant-overview-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #DCFCE7;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.merchant-overview-value {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.merchant-overview-badge {
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #FFFFFF;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+/* Quick Actions Section matching screenshot */
+.merchant-section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.2px;
+}
+
+.merchant-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.merchant-action-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+    box-sizing: border-box;
+}
+
+.merchant-action-btn:active {
+    transform: scale(0.98);
+}
+
+.merchant-action-btn.solid-green {
+    background-color: #27672D;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(39, 103, 45, 0.2);
+}
+
+.merchant-action-btn.outline-green {
+    background-color: #FFFFFF;
+    border: 2px solid #27672D;
+    color: #27672D;
+}
+
+.merchant-action-btn.solid-orange {
+    background-color: #FF8C00;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(255, 140, 0, 0.25);
+}
+
+/* Recent Stock Activity Section matching screenshot */
+.merchant-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.merchant-activity-card-enhanced {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.merchant-activity-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.merchant-activity-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.merchant-activity-icon.plus {
+    background-color: #E8F5E9;
+    color: #27672D;
+}
+
+.merchant-activity-icon.minus {
+    background-color: #FEF2F2;
+    color: #DC2626;
+}
+
+.merchant-activity-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+}
+
+.merchant-activity-time {
+    font-size: 11px;
+    font-weight: 500;
+    color: #94A3B8;
+}
+
+.merchant-activity-badge {
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.merchant-activity-badge.plus {
+    background-color: #E8F5E9;
+    color: #27672D;
+}
+
+.merchant-activity-badge.minus {
+    background-color: #FEF2F2;
+    color: #DC2626;
+}
+
+/* Bottom Navigation Bar matching screenshot */
+.merchant-bottom-nav {
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    padding: 8px 12px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.merchant-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    color: #94A3B8;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    padding: 4px 0;
+}
+
+.merchant-nav-item.active {
+    color: #27672D;
+    font-weight: 800;
+}
+
+.merchant-nav-item.active svg {
+    color: #27672D;
+}
+
+/* Premium Welcome Card & Store Status Pill */
+.so-welcome-card {
+    background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+    border: 1px solid #BBF7D0;
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.06);
+    margin-bottom: 6px;
+}
+
+.so-welcome-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.so-welcome-subtitle {
+    font-size: 10px;
+    font-weight: 800;
+    color: #166534;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 2px;
+}
+
+.so-welcome-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #052E16;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.so-status-pill-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    outline: none;
+    letter-spacing: 0.3px;
+}
+
+.so-status-pill-btn.open {
+    background-color: #16A34A;
+    box-shadow: 0 3px 8px rgba(22, 163, 74, 0.3);
+}
+
+.so-status-pill-btn.closed {
+    background-color: #DC2626;
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
+}
+
+.so-status-pill-btn:active {
+    transform: scale(0.95);
+}
+
+.so-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.so-status-pill-btn.open .so-status-dot {
+    animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

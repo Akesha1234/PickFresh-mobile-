@@ -1,0 +1,213 @@
+/* PickFresh Get Started Page CSS - 100% Match to User Screenshot */
+
+.get-started-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    background-color: #FAFBF8;
+    position: relative;
+    overflow-y: auto;
+    user-select: none;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Scrollbar */
+.get-started-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.get-started-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Top Hero Image Header with Cutout Curve */
+.get-started-hero {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    min-height: 310px;
+    overflow: hidden;
+    background-color: #FAFBF8;
+}
+
+.get-started-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+/* Soft Diagonal White Gradient Mask on Left side matching reference image */
+.get-started-hero-mask {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FAFBF8 0%, rgba(250, 251, 248, 0.95) 32%, rgba(250, 251, 248, 0.5) 55%, rgba(250, 251, 248, 0) 78%),
+        linear-gradient(180deg, rgba(250, 251, 248, 0) 65%, #FAFBF8 100%);
+    pointer-events: none;
+}
+
+/* Overlapping Centered Logo Card */
+.get-started-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    position: relative;
+    z-index: 10;
+}
+
+.get-started-logo-card {
+    width: 140px;
+    height: 140px;
+    background-color: #FFFFFF;
+    border-radius: 34px;
+    padding: 12px;
+    box-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 22px;
+}
+
+/* Header Titles */
+.get-started-title-section {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    padding: 0 20px;
+}
+
+.get-started-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2E7D32;
+    letter-spacing: -0.6px;
+    margin-bottom: 4px;
+}
+
+.get-started-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* Feature Cards List */
+.get-started-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 20px;
+    margin-bottom: 28px;
+}
+
+.get-started-feature-card {
+    background-color: #FFFFFF;
+    border-radius: 22px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1.5px solid #F0F4EF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.get-started-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.get-started-feature-icon-badge {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 50%;
+    background-color: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2E7D32;
+}
+
+.get-started-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.get-started-feature-h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.get-started-feature-p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.45;
+}
+
+/* Bottom Actions Section */
+.get-started-actions {
+    margin-top: auto;
+    padding: 8px 20px 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.get-started-btn-primary {
+    width: 100%;
+    padding: 17px;
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.22);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.get-started-btn-primary:hover {
+    background-color: #1B5E20;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(46, 125, 50, 0.28);
+}
+
+.get-started-btn-primary:active {
+    transform: translateY(1px);
+}
+
+.get-started-signin-text {
+    font-size: 13px;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.get-started-signin-link {
+    color: #2E7D32;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.get-started-signin-link:hover {
+    text-decoration: underline;
+}

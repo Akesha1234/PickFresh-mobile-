@@ -1,0 +1,142 @@
+.pi-delete-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pi-delete-modal-card {
+    width: 100%;
+    max-width: 380px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px 20px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pi-delete-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #F1F5F9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pi-delete-modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pi-delete-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #FEE2E2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.pi-delete-modal-header h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 6px 0;
+}
+
+.pi-delete-modal-header p {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.pi-delete-details-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pi-detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.pi-detail-row span {
+    color: #64748B;
+}
+
+.pi-detail-row strong {
+    color: #0F172A;
+}
+
+.pi-delete-warning-note {
+    font-size: 11px;
+    color: #991B1B;
+    background: #FEF2F2;
+    padding: 8px 12px;
+    border-radius: 10px;
+    line-height: 1.35;
+}
+
+.pi-delete-modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.pi-btn-cancel {
+    flex: 1;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #0F172A;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pi-btn-delete {
+    flex: 1;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}

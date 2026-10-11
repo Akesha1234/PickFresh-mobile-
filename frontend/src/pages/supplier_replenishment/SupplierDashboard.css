@@ -1,0 +1,320 @@
+.supplier-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #FAFBF8;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Top Bar Header matching screenshot */
+.supplier-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F1F5F9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.supplier-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.supplier-logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.supplier-brand-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #27672D;
+    margin: 0;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+}
+
+.supplier-brand-subtitle {
+    font-size: 11px;
+    color: #64748B;
+    margin: 2px 0 0 0;
+    font-weight: 500;
+}
+
+.supplier-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.supplier-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.15s ease;
+}
+
+.supplier-icon-btn:active {
+    background-color: #F1F5F9;
+}
+
+.supplier-notif-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #EF4444;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+}
+
+/* Supplier Content Container matching screenshot */
+.supplier-content-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 18px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.supplier-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+/* 3 Stat Cards Grid matching screenshot */
+.supplier-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.supplier-stat-card-item {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 18px 10px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.supplier-stat-card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    border-color: #CBD5E1;
+}
+
+.supplier-stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #27672D;
+    line-height: 1;
+}
+
+.supplier-stat-num.amber {
+    color: #F57C00;
+}
+
+.supplier-stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* Action Buttons Stack matching screenshot */
+.supplier-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.supplier-action-btn-solid {
+    width: 100%;
+    background-color: #27672D;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(39, 103, 45, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.supplier-action-btn-solid:hover {
+    background-color: #1F5224;
+    box-shadow: 0 4px 10px rgba(39, 103, 45, 0.3);
+    transform: translateY(-1px);
+}
+
+.supplier-action-btn-solid:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.supplier-action-btn-outline {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px solid #27672D;
+    color: #27672D;
+    padding: 14px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.supplier-action-btn-outline:hover {
+    background-color: #F0FDF4;
+    box-shadow: 0 2px 8px rgba(39, 103, 45, 0.1);
+}
+
+.supplier-action-btn-outline:active {
+    transform: scale(0.98);
+    background-color: #E8F5E9;
+}
+
+/* Latest alert Section matching screenshot */
+.supplier-alert-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.supplier-section-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.supplier-alert-card {
+    background-color: #FFF4E5;
+    border-radius: 20px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid #FFE0B2;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.supplier-alert-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #F57C00;
+}
+
+.supplier-alert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 124, 0, 0.15);
+}
+
+.supplier-alert-store {
+    font-size: 16px;
+    font-weight: 800;
+    color: #475569;
+    margin: 0;
+}
+
+.supplier-alert-product {
+    font-size: 15px;
+    font-weight: 800;
+    color: #F57C00;
+    margin: 0;
+}
+
+.supplier-alert-details {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748B;
+    margin: 0;
+}
+
+/* Fixed Supplier Bottom Navigation Bar matching screenshot */
+.supplier-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    padding: 8px 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.supplier-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 12px;
+    transition: color 0.15s ease;
+}
+
+.supplier-nav-item.active {
+    color: #27672D;
+    font-weight: 800;
+}

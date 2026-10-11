@@ -1,0 +1,939 @@
+.supplier-catalog-container {
+    padding: 18px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #FAFBF8;
+    height: 100%;
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.supplier-catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.supplier-catalog-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+}
+
+.supplier-catalog-sub {
+    font-size: 12.5px;
+    color: #64748B;
+    margin: 4px 0 0 0;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.supplier-catalog-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.supplier-add-product-btn {
+    background-color: #166534;
+    color: #FFFFFF;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.2);
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.supplier-add-product-btn:hover {
+    background-color: #14532D;
+}
+
+.supplier-add-product-btn:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+/* Search Input Box */
+.supplier-catalog-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 0 14px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+    transition: all 0.2s ease;
+}
+
+.supplier-catalog-search-wrapper:focus-within {
+    border-color: #166534;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.1);
+}
+
+.supplier-search-input {
+    flex: 1;
+    border: none;
+    padding: 14px 10px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #0F172A;
+    background: transparent;
+    outline: none;
+}
+
+.supplier-search-input::placeholder {
+    color: #94A3B8;
+}
+
+/* Horizontal Category Filter Bar */
+.supplier-catalog-cat-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.supplier-catalog-scroll-arrow {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.supplier-catalog-scroll-arrow:hover {
+    background: #F8FAFC;
+    color: #0F172A;
+}
+
+.supplier-catalog-categories-bar {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 0 8px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.supplier-catalog-categories-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.supplier-cat-chip {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+}
+
+.supplier-cat-chip:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+.supplier-cat-chip.active {
+    background-color: #166534;
+    color: #FFFFFF;
+    border-color: #166534;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.25);
+}
+
+.chip-count {
+    background-color: rgba(15, 23, 42, 0.08);
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.supplier-cat-chip.active .chip-count {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+}
+
+/* Loading & Empty States */
+.supplier-catalog-loading,
+.supplier-catalog-error,
+.supplier-catalog-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E2E8F0;
+    text-align: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.supplier-catalog-empty h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 4px 0 0 0;
+}
+
+.supplier-catalog-empty p {
+    font-size: 14px;
+    color: #64748B;
+    max-width: 380px;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+/* Grid & Card Layout */
+.supplier-catalog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.supplier-product-card {
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.supplier-product-card:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.supplier-product-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.supplier-product-cat-pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    background-color: #F1F5F9;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.supplier-product-brand-pill {
+    font-size: 11px;
+    font-weight: 700;
+    background-color: #E0F2FE;
+    color: #0369A1;
+    padding: 3.5px 9px;
+    border-radius: 8px;
+    border: 1px solid #BAE6FD;
+}
+
+.supplier-product-status-pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.2px;
+}
+
+.supplier-product-status-pill.available {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+.supplier-product-status-pill.out-of-stock {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.supplier-product-content-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.supplier-product-img-thumb {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #E2E8F0;
+    background-color: #F8FAFC;
+}
+
+.supplier-product-img-fallback {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background-color: #F0FDF4;
+    border: 1px solid #DCFCE7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supplier-product-title-box {
+    flex: 1;
+}
+
+.supplier-product-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.supplier-product-details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8FAFC;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #F1F5F9;
+}
+
+.supplier-product-price-tag,
+.supplier-product-qty-tag {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.price-label,
+.qty-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.price-val {
+    font-size: 15px;
+    font-weight: 800;
+    color: #166534;
+}
+
+.qty-val {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.supplier-product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.supplier-catalog-edit-btn {
+    flex: 1;
+    background-color: #F8FAFC;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+}
+
+.supplier-catalog-edit-btn:hover {
+    background-color: #F1F5F9;
+}
+
+.supplier-catalog-delete-btn {
+    flex: 1;
+    background-color: #FEF2F2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+}
+
+.supplier-catalog-delete-btn:hover {
+    background-color: #FEE2E2;
+}
+
+/* Modals */
+.catalog-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.catalog-modal-content {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+    animation: modalIn 0.2s ease-out;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.catalog-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog-modal-header h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+}
+
+.catalog-modal-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748B;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.catalog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.catalog-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.catalog-form-group label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.catalog-form-group input,
+.catalog-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border-radius: 12px;
+    border: 1px solid #CBD5E1;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #0F172A;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+.catalog-form-group input:focus,
+.catalog-form-group select:focus {
+    border-color: #166534;
+}
+
+/* Image Picker Styles */
+.catalog-image-box {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    background-color: #F8FAFC;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1.5px dashed #CBD5E1;
+    box-sizing: border-box;
+}
+
+.catalog-img-preview-col {
+    flex-shrink: 0;
+}
+
+.catalog-img-preview-wrap {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.catalog-img-preview {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #CBD5E1;
+}
+
+.remove-img-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.catalog-img-upload-prompt {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #94A3B8;
+    gap: 2px;
+}
+
+.catalog-img-inputs-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.catalog-img-url-input {
+    width: 100%;
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    border: 1px solid #CBD5E1 !important;
+    box-sizing: border-box;
+}
+
+.catalog-file-upload-lbl {
+    background-color: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    width: fit-content;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.catalog-file-upload-lbl:hover {
+    background-color: #E2E8F0;
+    color: #0F172A;
+    border-color: #94A3B8;
+}
+
+/* Category header and custom inline add */
+.catalog-cat-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.catalog-add-cat-btn {
+    background: none;
+    border: none;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.15s ease;
+}
+
+.catalog-add-cat-btn:hover {
+    text-decoration: underline;
+}
+
+.catalog-add-cat-btn.cancel {
+    color: #DC2626;
+}
+
+.catalog-new-cat-inline-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.catalog-new-cat-input {
+    flex: 1;
+    padding: 10px 12px !important;
+    font-size: 13.5px !important;
+    border-radius: 10px !important;
+}
+
+.catalog-save-cat-btn {
+    background-color: #166534;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.catalog-save-cat-btn:hover {
+    background-color: #14532D;
+}
+
+.catalog-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .catalog-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.catalog-modal-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.catalog-cancel-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.catalog-save-btn {
+    flex: 1.5;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #166534;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.catalog-delete-confirm-btn {
+    flex: 1.5;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.supplier-back-btn-right {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.supplier-back-btn-right:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+.supplier-back-btn-right:active {
+    transform: scale(0.95);
+}
+
+/* Category Manager Styles */
+.supplier-catalog-manage-cats-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFFFFF;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 8.5px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.supplier-catalog-manage-cats-btn:hover {
+    background-color: #F8FAFC;
+    border-color: #94A3B8;
+    color: #0F172A;
+}
+
+.cat-manager-modal {
+    max-width: 440px !important;
+}
+
+.cat-manager-add-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.cat-manager-input {
+    flex: 1;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    border: 1px solid #CBD5E1 !important;
+    font-size: 13.5px !important;
+}
+
+.cat-manager-add-btn {
+    background-color: #166534;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.cat-manager-add-btn:hover {
+    background-color: #14532D;
+}
+
+.cat-manager-list {
+    max-height: 280px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 4px;
+    margin-bottom: 12px;
+}
+
+.cat-manager-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.cat-manager-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.cat-manager-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.cat-edit-action-btn,
+.cat-delete-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.cat-edit-action-btn {
+    background-color: #EFF6FF;
+    color: #2563EB;
+}
+
+.cat-edit-action-btn:hover {
+    background-color: #DBEAFE;
+}
+
+.cat-delete-action-btn {
+    background-color: #FEF2F2;
+    color: #DC2626;
+}
+
+.cat-delete-action-btn:hover {
+    background-color: #FEE2E2;
+}
+
+.cat-manager-edit-row {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    align-items: center;
+}
+
+.cat-manager-edit-input {
+    flex: 1;
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+}
+
+.cat-save-btn {
+    background-color: #166534;
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.cat-cancel-btn {
+    background-color: #E2E8F0;
+    color: #475569;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}

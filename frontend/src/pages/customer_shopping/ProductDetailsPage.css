@@ -1,0 +1,366 @@
+/* ProductDetailsPage.css - Premium Modern Mobile Aesthetic */
+
+.pd-modern-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background-color: #FAF9F5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 🔝 Top Navigation Bar */
+.pd-titles-group-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.pd-titles-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pd-main-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    letter-spacing: -0.4px;
+    margin: 0;
+}
+
+.pd-main-sub {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0;
+}
+
+.pd-page-back-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.pd-page-back-arrow:active {
+    transform: scale(0.95);
+    background-color: #F1F5F9;
+}
+
+/* 📜 Scrollable Content Area */
+.pd-scrollable-body {
+    padding: 12px 14px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Product Hero Image Card */
+.pd-hero-image-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 14px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pd-stock-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid #E2E8F0;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #166534;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.pd-stock-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.pd-stock-dot.online {
+    background-color: #22C55E;
+    box-shadow: 0 0 8px #22C55E;
+}
+
+.pd-stock-dot.offline {
+    background-color: #EF4444;
+}
+
+.pd-image-container {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.pd-hero-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease;
+}
+
+.pd-hero-img:hover {
+    transform: scale(1.04);
+}
+
+/* Details Card */
+.pd-details-card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.pd-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.pd-category-chip {
+    background-color: #E8F5E9;
+    color: #2D7B38;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pd-store-chip {
+    background-color: #F1F5F9;
+    color: #475569;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pd-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 4px 0 8px 0;
+    line-height: 1.25;
+}
+
+.pd-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #E2E8F0;
+}
+
+.pd-price-main {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.pd-currency {
+    font-size: 14px;
+    font-weight: 800;
+    color: #2D7B38;
+}
+
+.pd-amount {
+    font-size: 26px;
+    font-weight: 900;
+    color: #2D7B38;
+    letter-spacing: -0.5px;
+}
+
+.pd-portion-label {
+    font-size: 12px;
+    color: #64748B;
+    font-weight: 700;
+}
+
+.pd-original-unit-price {
+    font-size: 11px;
+    color: #94A3B8;
+    font-weight: 600;
+}
+
+/* Portion Selector */
+.pd-portion-section {
+    margin-bottom: 18px;
+}
+
+.pd-section-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: #1E293B;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pd-portion-grid {
+    display: flex;
+    gap: 10px;
+}
+
+.pd-portion-btn {
+    flex: 1;
+    padding: 12px 10px;
+    border-radius: 14px;
+    border: 1.5px solid #E2E8F0;
+    background-color: #FFFFFF;
+    color: #64748B;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.pd-portion-btn.active {
+    border-color: #2D7B38;
+    background-color: #F4FBF5;
+    color: #2D7B38;
+    box-shadow: 0 4px 12px rgba(45, 123, 56, 0.14);
+}
+
+.pd-active-check {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* Quantity Section */
+.pd-quantity-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding-top: 16px;
+    border-top: 1px dashed #E2E8F0;
+}
+
+.pd-qty-control-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 6px 14px;
+}
+
+.pd-qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.1s ease;
+}
+
+.pd-qty-btn:active:not(:disabled) {
+    transform: scale(0.92);
+}
+
+.pd-qty-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pd-qty-number {
+    font-size: 16px;
+    font-weight: 900;
+    color: #0F172A;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* 🔒 Fixed Bottom Action Bar */
+.pd-bottom-action-bar {
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    padding: 12px 18px 14px;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+.pd-add-to-cart-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #2D7B38 0%, #1B5E20 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-size: 14.5px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(45, 123, 56, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pd-add-to-cart-btn:active {
+    transform: scale(0.98);
+}

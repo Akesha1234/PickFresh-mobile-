@@ -1,0 +1,13 @@
+=== ALL RestockRequests (8) ===
+status=Delivered | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=undefined
+status=Delivered | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=undefined
+status=Delivered | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=undefined
+status=Delivered | supplierName=Fresh Fields | supplierEmail=NONE | store=undefined
+status=Pending | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=undefined
+status=Pending | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=GroceryMart
+status=Pending | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=GroceryMart
+status=Pending | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=GroceryMart
+
+=== ALL SupplierReplenishments (2) ===
+status=Pending Approval | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=GroceryMart
+status=Delivered | supplierName=Lanka Mega Wholesale Distributors | supplierEmail=megasupplier@gmail.com | store=GroceryMart

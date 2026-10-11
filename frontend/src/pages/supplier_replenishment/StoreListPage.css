@@ -1,0 +1,193 @@
+.store-list-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFBF8;
+    height: 100%;
+    min-height: 0;
+    flex: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 🔝 Top Fixed Header Section */
+.store-list-header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 18px 12px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F1F5F9;
+    flex-shrink: 0;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+/* Header Title Row matching screenshot */
+.store-list-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.store-list-page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.store-list-restore-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(100, 116, 139, 0.2);
+    cursor: pointer;
+}
+
+.store-list-back-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.store-list-back-btn:hover {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+.store-list-back-btn:active {
+    transform: scale(0.95);
+}
+
+/* Search Box matching screenshot */
+.store-list-search-box {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.store-list-search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #1E293B;
+    background: transparent;
+}
+
+.store-list-search-input::placeholder {
+    color: #94A3B8;
+}
+
+/* 📜 Scrollable Content Area */
+.store-list-scrollable-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 18px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Store Cards Stack matching screenshot */
+.store-list-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.store-list-card-item {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px 20px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.store-list-card-item.active-highlight {
+    border: 2px solid #27672D;
+}
+
+.store-list-card-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1E293B;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.store-list-card-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748B;
+    margin: 0 0 4px 0;
+}
+
+.store-list-pill-active {
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background-color: #E8F5E9;
+    color: #27672D;
+    text-transform: uppercase;
+}
+
+/* 🔒 Fixed Bottom Action Bar */
+.store-list-actions-group {
+    padding: 12px 18px 14px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+.store-list-remove-btn {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px solid #27672D;
+    color: #27672D;
+    padding: 14px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.store-list-remove-btn:active {
+    transform: scale(0.98);
+    background-color: #F0FDF4;
+}
