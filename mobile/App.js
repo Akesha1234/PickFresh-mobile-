@@ -17,8 +17,8 @@ import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Default development server URL (local Wi-Fi IP for physical phone & emulator access)
-const DEFAULT_SERVER_URL = 'http://192.168.1.111:5173';
+// Default live production cloud server URL (Hosted on Vercel)
+const DEFAULT_SERVER_URL = 'https://pickfresh-mobile.vercel.app';
 const STORAGE_KEY_URL = '@pickfresh_server_url';
 
 export default function App() {
