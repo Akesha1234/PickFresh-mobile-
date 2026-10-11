@@ -138,17 +138,6 @@ export default function App() {
           }}
         />
 
-        {/* Top Floating App Bar with Settings Gear (Accessible anytime) */}
-        <View style={styles.topControlOverlay}>
-          <TouchableOpacity
-            style={styles.settingsButton}
-            onPress={() => setShowSettings(true)}
-            activeOpacity={0.8}
-          >
-            <Text style={styles.settingsButtonText}>⚙️ Server IP</Text>
-          </TouchableOpacity>
-        </View>
-
         {/* Loading Spinner Screen */}
         {isLoading && !hasError && (
           <View style={styles.overlayLoading}>
