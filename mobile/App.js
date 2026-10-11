@@ -23,24 +23,18 @@ const STORAGE_KEY_URL = '@pickfresh_server_url';
 
 export default function App() {
   const [serverUrl, setServerUrl] = useState(DEFAULT_SERVER_URL);
-  const [inputUrl, setInputUrl] = useState(DEFAULT_SERVER_URL);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [canGoBack, setCanGoBack] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
   const webViewRef = useRef(null);
 
-  // Load persisted server URL on startup
+  // Clear any old local dev IP and ensure live production URL
   useEffect(() => {
     (async () => {
       try {
-        const saved = await AsyncStorage.getItem(STORAGE_KEY_URL);
-        if (saved) {
-          setServerUrl(saved);
-          setInputUrl(saved);
-        }
+        await AsyncStorage.removeItem(STORAGE_KEY_URL);
       } catch (e) {
-        console.warn('Failed to load saved server URL:', e);
+        // ignore
       }
     })();
   }, []);
@@ -59,24 +53,7 @@ export default function App() {
     return () => backHandler.remove();
   }, [canGoBack]);
 
-  const handleSaveUrl = async () => {
-    let cleanUrl = inputUrl.trim();
-    if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')) {
-      cleanUrl = `http://${cleanUrl}`;
-    }
-    try {
-      await AsyncStorage.setItem(STORAGE_KEY_URL, cleanUrl);
-      setServerUrl(cleanUrl);
-      setHasError(false);
-      setIsLoading(true);
-      setShowSettings(false);
-      if (webViewRef.current) {
-        webViewRef.current.reload();
-      }
-    } catch (e) {
-      Alert.alert('Error', 'Failed to save server URL');
-    }
-  };
+
 
   const handleRetry = () => {
     setHasError(false);
@@ -180,43 +157,6 @@ export default function App() {
         )}
       </View>
 
-      {/* Server IP Configuration Modal */}
-      <Modal visible={showSettings} animationType="slide" transparent={true}>
-        <View style={styles.modalBackdrop}>
-          <View style={styles.modalCard}>
-            <Text style={styles.modalTitle}>⚙️ Mobile Server Configuration</Text>
-            <Text style={styles.modalDesc}>
-              Enter the local IP address of your development machine where Vite and Express are running:
-            </Text>
-
-            <TextInput
-              style={styles.modalInput}
-              value={inputUrl}
-              onChangeText={setInputUrl}
-              placeholder="http://192.168.1.xxx:5173"
-              placeholderTextColor="#94A3B8"
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="url"
-            />
-
-            <View style={styles.modalActions}>
-              <TouchableOpacity
-                style={styles.modalCancelBtn}
-                onPress={() => {
-                  setInputUrl(serverUrl);
-                  setShowSettings(false);
-                }}
-              >
-                <Text style={styles.modalCancelText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.modalSaveBtn} onPress={handleSaveUrl}>
-                <Text style={styles.modalSaveText}>Connect</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
     </SafeAreaView>
   );
 }
