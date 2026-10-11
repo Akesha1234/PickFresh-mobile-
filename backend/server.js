@@ -6,22 +6,26 @@ const connectDB = require('./config/db');
 // Load environment variables
 dotenv.config();
 
-// Connect to Database & Pre-warm Cache
-connectDB().then(() => {
-    try {
-        const { getCachedCatalogMap } = require('./supplier_replenishment/supplierReplenishmentController');
-        if (getCachedCatalogMap) {
-            getCachedCatalogMap().catch(() => { });
-        }
-    } catch (e) { }
-});
-
 const app = express();
 
 // Body Parser & CORS Middleware
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+// Ensure DB is connected on every incoming request (Serverless friendly)
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (err) {
+        console.error('Database connection middleware failed:', err.message);
+        return res.status(500).json({
+            success: false,
+            message: 'Database Connection Error: Unable to connect to MongoDB Atlas. Ensure MongoDB IP whitelist allows 0.0.0.0/0.'
+        });
+    }
+});
 
 // Basic Healthcheck API Endpoint
 app.get('/api/health', (req, res) => {
@@ -61,6 +65,8 @@ app.get('*', (req, res, next) => {
 app.use((req, res) => {
     res.status(404).json({ success: false, message: 'API Endpoint not found' });
 });
+
+const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
     app.listen(PORT, () => {
