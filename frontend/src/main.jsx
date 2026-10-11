@@ -5,13 +5,21 @@ import './index.css';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 
-// Seamless network support for React Native & mobile devices:
-// If accessed from a mobile device or network IP, automatically route API requests to that host
-if (typeof window !== 'undefined' && window.location.hostname && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+// Universal API routing helper:
+// In production (e.g. Vercel), replace http://localhost:5000 with the current origin (https://pickfresh-mobile.vercel.app)
+// In local mobile network testing (e.g. 192.168.x.x), route to that local IP with port 5000
+if (typeof window !== 'undefined') {
     const originalFetch = window.fetch;
     window.fetch = function (resource, init) {
         if (typeof resource === 'string' && resource.includes('http://localhost:5000')) {
-            resource = resource.replace('http://localhost:5000', `http://${window.location.hostname}:5000`);
+            const host = window.location.hostname;
+            if (host && host !== 'localhost' && host !== '127.0.0.1') {
+                if (host.includes('vercel.app') || window.location.protocol === 'https:') {
+                    resource = resource.replace('http://localhost:5000', window.location.origin);
+                } else {
+                    resource = resource.replace('http://localhost:5000', `http://${host}:5000`);
+                }
+            }
         }
         return originalFetch(resource, init);
     };
