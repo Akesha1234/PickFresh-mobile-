@@ -111,9 +111,14 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setUser(null);
         setToken('');
-        localStorage.removeItem('pickfresh_user');
-        localStorage.removeItem('pickfresh_token');
-        localStorage.removeItem('pickfresh_registered_users');
+        try {
+            localStorage.clear();
+            sessionStorage.clear();
+        } catch (e) { }
+        // Force full refresh to clear all in-memory React and network states
+        if (typeof window !== 'undefined') {
+            window.location.href = '/';
+        }
     };
 
     // Strict Backend Social Login Call to MongoDB Atlas

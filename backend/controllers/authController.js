@@ -45,18 +45,13 @@ exports.registerUser = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Please provide both email and password' });
         }
 
-        if (mongoose.connection.readyState !== 1) {
-            try {
-                await connectDB();
-            } catch (err) {
-                console.error('Failed to reconnect in registerUser:', err.message);
-            }
-        }
-
-        if (mongoose.connection.readyState !== 1) {
+        try {
+            await connectDB();
+        } catch (dbErr) {
+            console.error('Database connection error in registerUser:', dbErr);
             return res.status(500).json({
                 success: false,
-                message: 'Database Connection Error: MongoDB Atlas is disconnected. Please check your network or IP whitelist.'
+                message: 'Database Connection Error: Unable to reach database. Please retry in a moment.'
             });
         }
 
@@ -157,18 +152,13 @@ exports.loginUser = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Please enter both email and password' });
         }
 
-        if (mongoose.connection.readyState !== 1) {
-            try {
-                await connectDB();
-            } catch (err) {
-                console.error('Failed to reconnect in loginUser:', err.message);
-            }
-        }
-
-        if (mongoose.connection.readyState !== 1) {
+        try {
+            await connectDB();
+        } catch (dbErr) {
+            console.error('Database connection error in loginUser:', dbErr);
             return res.status(500).json({
                 success: false,
-                message: 'Database Connection Error: MongoDB Atlas is disconnected. Please check your network or IP whitelist.'
+                message: 'Database Connection Error: Unable to reach database. Please retry in a moment.'
             });
         }
 
