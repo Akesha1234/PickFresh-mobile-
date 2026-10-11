@@ -2,6 +2,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
+const connectDB = require('../config/db');
 
 const generateToken = (user) => {
     return jwt.sign(
@@ -42,6 +43,14 @@ exports.registerUser = async (req, res) => {
 
         if (!email || !password) {
             return res.status(400).json({ success: false, message: 'Please provide both email and password' });
+        }
+
+        if (mongoose.connection.readyState !== 1) {
+            try {
+                await connectDB();
+            } catch (err) {
+                console.error('Failed to reconnect in registerUser:', err.message);
+            }
         }
 
         if (mongoose.connection.readyState !== 1) {
@@ -146,6 +155,14 @@ exports.loginUser = async (req, res) => {
 
         if (!email || !password) {
             return res.status(400).json({ success: false, message: 'Please enter both email and password' });
+        }
+
+        if (mongoose.connection.readyState !== 1) {
+            try {
+                await connectDB();
+            } catch (err) {
+                console.error('Failed to reconnect in loginUser:', err.message);
+            }
         }
 
         if (mongoose.connection.readyState !== 1) {
