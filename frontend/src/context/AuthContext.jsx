@@ -114,6 +114,7 @@ export const AuthProvider = ({ children }) => {
         try {
             localStorage.clear();
             sessionStorage.clear();
+            sessionStorage.setItem('pickfresh_next_page', 'login');
         } catch (e) { }
         // Force full refresh to clear all in-memory React and network states
         if (typeof window !== 'undefined') {

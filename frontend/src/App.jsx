@@ -28,7 +28,16 @@ import {
 export default function App() {
     const { user, switchRole, logout } = useAuth();
     const { cartItems, totalAmount } = useCart();
-    const [currentPage, setCurrentPage] = useState('logo'); // logo, welcome, login, roleselect, signup, home
+    const [currentPage, setCurrentPage] = useState(() => {
+        try {
+            const next = sessionStorage.getItem('pickfresh_next_page');
+            if (next) {
+                sessionStorage.removeItem('pickfresh_next_page');
+                return next;
+            }
+        } catch (e) { }
+        return 'logo';
+    }); // logo, welcome, login, roleselect, signup, home
     const [selectedRole, setSelectedRole] = useState('customer');
     const [activeTab, setActiveTab] = useState('home');
 
@@ -42,7 +51,7 @@ export default function App() {
 
     const handleLogout = () => {
         logout();
-        setCurrentPage('welcome');
+        setCurrentPage('login');
     };
 
     return (
