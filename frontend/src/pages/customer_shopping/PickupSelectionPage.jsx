@@ -77,7 +77,7 @@ export default function PickupSelectionPage({ onNavigate, cartItems = [], select
 
         try {
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 5000);
+            const timeoutId = setTimeout(() => controller.abort(), 20000);
 
             const res = await fetch('http://localhost:5000/api/orders', {
                 method: 'POST',

@@ -100,8 +100,8 @@ exports.createOrder = async (req, res) => {
 
         const order = await Order.create(orderData);
 
-        // Deduct inventory stock in MongoDB Atlas based on ordered unit & quantity (e.g., 4 x 250g = 1kg deducted)
-        for (const item of sanitizedItems) {
+        // Deduct inventory stock in MongoDB Atlas in parallel for fastest response time
+        await Promise.all(sanitizedItems.map(async (item) => {
             try {
                 let product = null;
                 if (item.product && mongoose.Types.ObjectId.isValid(item.product)) {
@@ -130,7 +130,7 @@ exports.createOrder = async (req, res) => {
             } catch (err) {
                 console.warn(`Stock deduction warning for item ${item.name}:`, err.message);
             }
-        }
+        }));
 
         invalidateProductsCache();
 
